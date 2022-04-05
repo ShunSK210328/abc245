@@ -196,8 +196,10 @@ struct Problem {
     Problem() = default;
 
     void solve() {
-        int n;
-        read(cin, n);
+        int A, B, C, D;
+        read(cin, A, B, C, D);
+        auto f = [](int h, int m) -> int { return (h * 60 + m) * 60; };
+        respond(f(A, B) < f(C, D) + 1, "Takahashi", "Aoki");
     }
 
     void repeat_solve() {
